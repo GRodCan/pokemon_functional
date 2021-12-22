@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios'
-import Pokemon from './Pokemon/Pokemon'
+import PokemonList from '../PokemonList/PokemonList'
 
 
 
@@ -12,7 +12,7 @@ function Search() {
   useEffect(() => {
     setInput("")
   }, [pokemons])
-  
+
   const handleChange = event => setInput(event.target.value)
   
   const searchPokemon= async (input)=>{
@@ -22,15 +22,14 @@ function Search() {
     setPokemons(newList)}
     else{window.alert("Introduce parámetro de búsqueda")}
   }
-
-  const paintPokemons = () => pokemons.map((pokemon,i)=><Pokemon info={pokemon} key={i}/>)   
+   
 
   return (
     <div><br/>
     <input type="text" name="input" id="input" onChange={handleChange} value={input}/>
     <button onClick={()=>searchPokemon(input)}>Search</button>
     <br/><br/>
-    {paintPokemons()}
+    <PokemonList list={pokemons}/>
     </div>
   )
 }
