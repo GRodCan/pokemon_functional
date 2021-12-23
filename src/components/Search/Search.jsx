@@ -16,7 +16,7 @@ function Search() {
     setInput("")
   }, [pokemons])
 
-  const debouncedSearchTerm = useDebounce(input, 2500);
+  const debouncedSearchTerm = useDebounce(input, 1000);
   
   const searchPokemon= async (input)=>{
     const filterList= pokemons.filter((pokemon)=>{
