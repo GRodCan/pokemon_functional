@@ -7,7 +7,7 @@ import "./PokemonList.css"
 
 function PokemonList() {
   const {pokemons} = useContext(listContext)
-  const paintPokemons = () => pokemons.map((pokemon,i)=><Link to={`/pokemon/${pokemon.id}?id=${pokemon.id}`} key={i} ><Pokemon info={pokemon} key={i}/></Link>)
+  const paintPokemons = () => pokemons.map((pokemon,i)=><Link to={`/pokemon?id=${pokemon.id}`} key={i} ><Pokemon info={pokemon} key={i}/></Link>)
   return (
     <div id='pokemons'>
       {pokemons.length>0?<>

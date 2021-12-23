@@ -17,7 +17,7 @@ function Main() {
                   <Route path="/" element={<PokemonList/>} exact />
                   <Route path="/new" element={<Form/>} />
                   <Route path="/search" element={<Search/>} />
-                  <Route path="/pokemon/:id" element={<Details pokemon={usePokemonID(query.get("id"))}/>} />
+                  <Route path="/pokemon" element={<Details pokemon={usePokemonID(query.get("id"))}/>} />
       </Routes>
     </main>
   )
