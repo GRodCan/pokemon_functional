@@ -20,9 +20,10 @@ function Details(info) {
       <h3>Nº Pokedex: {id}</h3>
       <h3>{types.length<2?<>Tipo: </>:<>Tipos: </>}</h3>
       <ul>{types.map((type,i)=><li key={i}>{type.type.name} </li>)}</ul>
-      <h3>Habilidades:</h3>
-      <ul>{abilities.map((ability,i)=><li key={i}>{ability.ability.name} </li>)}</ul></div>
+      </div>
       <div id="details_stats">
+      <h3>Habilidades:</h3>
+      <ul>{abilities.map((ability,i)=><li key={i}>{ability.ability.name} </li>)}</ul>
       <h3>Estadisticas:</h3>
       <ul>{stats.map((stat,i)=><li key={i}><b>{stat.stat.name}:</b> {stat.base_stat}</li>)}</ul>
       </div>

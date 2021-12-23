@@ -9,7 +9,7 @@ const Pokemon=({info})=>{
     <div className='cardPokemon'>
       <img src={img} alt="avatar pokemon" className='avatar_img' />
       <div className='infoPokemon'>
-        <div><h3>Nombre: <br/> {name}</h3>
+        <div><h3>{name}</h3>
         <h4>Nº Pokedex: <br/> {id}</h4></div>
         <div><h4>{types.length<2?<>Tipo:</>:<>Tipos:</>}</h4>
         <ul>{types.map((type,i)=><li key={i}>{type.type.name} </li>)}</ul></div>
