@@ -7,9 +7,9 @@ function Details(info) {
 
 
   const printMoves=(moves)=>{
-    return moves.map((move)=>{
+    return moves.map((move,i)=>{
       let moveLearn=move.version_group_details[0]
-      return <li><div className='move'><h4>{move.move.name}:</h4> <div><p>Nivel necesario: {moveLearn.level_learned_at}</p> <p>Metodo de aprendizaje: {moveLearn.move_learn_method.name}</p></div></div></li>
+      return <li key={i}><div className='move'><h4>{move.move.name}:</h4> <div><p>Nivel necesario: {moveLearn.level_learned_at}</p> <p>Metodo de aprendizaje: {moveLearn.move_learn_method.name}</p></div></div></li>
   })}
 
   return (
@@ -19,12 +19,12 @@ function Details(info) {
       <h2>{name}</h2>
       <h3>Nº Pokedex: {id}</h3>
       <h3>{types.length<2?<>Tipo: </>:<>Tipos: </>}</h3>
-      <ul>{types.map((type)=><li>{type.type.name} </li>)}</ul>
+      <ul>{types.map((type,i)=><li key={i}>{type.type.name} </li>)}</ul>
       <h3>Habilidades:</h3>
-      <ul>{abilities.map((ability)=><li>{ability.ability.name} </li>)}</ul></div>
+      <ul>{abilities.map((ability,i)=><li key={i}>{ability.ability.name} </li>)}</ul></div>
       <div id="details_stats">
       <h3>Estadisticas:</h3>
-      <ul>{stats.map((stat)=><li><b>{stat.stat.name}:</b> {stat.base_stat}</li>)}</ul>
+      <ul>{stats.map((stat,i)=><li key={i}><b>{stat.stat.name}:</b> {stat.base_stat}</li>)}</ul>
       </div>
       <div id='details_moves'>{moves?<><h3>Ataques disponibles:</h3><ol id='details_moves_ol'>{printMoves(moves)}</ol></>:null}
     </div>

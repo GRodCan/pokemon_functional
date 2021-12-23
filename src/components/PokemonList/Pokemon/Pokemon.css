@@ -1,5 +1,6 @@
 .cardPokemon{
     display: flex;
+    column-gap: 0.5rem;
     border-style: solid;
     border-radius: 5px;
     border-width: 0.2rem;

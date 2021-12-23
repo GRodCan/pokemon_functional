@@ -31,7 +31,8 @@
     border-top: 0.2rem solid crimson;
     border-bottom: 0.2rem solid crimson;  
 }
-::-webkit-scrollbar{color: transparent;}
+::-webkit-scrollbar{color: transparent;
+width: 0rem;}
 .move{
     width: 15rem;
     display: flex;
