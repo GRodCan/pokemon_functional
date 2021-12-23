@@ -46,7 +46,7 @@ function Search() {
   return (
     <div id='search'>
       <h2>Introduce el pokemon (o el número de este en la pokedex) para añadir a tu lista:</h2>
-    <input type="text" name="input" id="input" onChange={handleChange} value={input} placeholder='Ej. "bulbasur" o "1"'/>
+    <input type="text" name="input" id="input" onChange={handleChange} value={input} placeholder='Ej. "bulbasaur" o "1"'/>
     </div>
   )
 }
