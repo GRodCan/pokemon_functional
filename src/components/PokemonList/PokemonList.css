@@ -1,0 +1,9 @@
+#pokemons{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
+#pokemons a{
+    text-decoration: none;
+    color: black;
+}

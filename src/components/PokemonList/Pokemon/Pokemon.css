@@ -1,0 +1,25 @@
+.cardPokemon{
+    display: flex;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 50rem;
+    margin: 0.25rem 0rem;
+}
+.cardPokemon:hover{
+    background-color: blanchedalmond;
+}
+.avatar_img{
+    width: 15rem;
+
+}
+.infoPokemon{
+    display: flex;
+}
+.infoPokemon ul{
+    list-style: none;
+}
+.infoPokemon div{
+justify-content: center;
+align-content: center;
+}

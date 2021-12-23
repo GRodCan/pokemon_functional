@@ -1,22 +1,24 @@
 import React from 'react'
+import "./Pokemon.css"
 
 const Pokemon=({info})=>{
-  
   const {abilities,name,id,sprites,stats,types}= info
-  const img= sprites.other["official-artwork"].front_default
+  const img= sprites.front_default
 
   return (
-    <div>
-      <img src={img} alt="" />
-      <h3>Nombre: {name}</h3>
-      <p>Nº Pokedex: {id}</p>
-      <p>{types.length<2?<>Tipo: </>:<>Tipos: </>}</p>
-      <ul>{types.map((type)=><li>{type.type.name} </li>)}</ul>
-      <p>Habilidades:</p>
-      <ul>{abilities.map((ability)=><li>{ability.ability.name} </li>)}</ul>
-      <p>Estadisticas:</p>
-      <ul>{stats.map((stat)=><li>{stat.stat.name}: {stat.base_stat}</li>)}</ul>
-    </div>
+    <div className='cardPokemon'>
+      <img src={img} alt="avatar pokemon" className='avatar_img' />
+      <div className='infoPokemon'>
+        <div><h3>Nombre: <br/> {name}</h3>
+        <h4>Nº Pokedex: <br/> {id}</h4></div>
+        <div><h4>{types.length<2?<>Tipo:</>:<>Tipos:</>}</h4>
+        <ul>{types.map((type)=><li>{type.type.name} </li>)}</ul></div>
+        <div><h4>Habilidades:</h4>
+        <ul>{abilities.map((ability)=><li>{ability.ability.name}</li>)}</ul></div>
+        <div><h4>Estadisticas:</h4>
+        <ul>{stats.map((stat)=><li>{stat.stat.name}: {stat.base_stat}</li>)}</ul></div>
+      </div>
+      </div>
   )
 }
 
