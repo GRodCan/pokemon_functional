@@ -16,7 +16,7 @@ const Pokemon=({info})=>{
         <div><h4>Habilidades:</h4>
         <ul>{abilities.map((ability)=><li>{ability.ability.name}</li>)}</ul></div>
         <div><h4>Estadisticas:</h4>
-        <ul>{stats.map((stat)=><li>{stat.stat.name}: {stat.base_stat}</li>)}</ul></div>
+        <ul>{stats.map((stat)=><li><b>{stat.stat.name}:</b> {stat.base_stat}</li>)}</ul></div>
       </div>
       </div>
   )

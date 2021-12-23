@@ -2,12 +2,15 @@
     display: flex;
     border-style: solid;
     border-radius: 5px;
+    border-width: 0.2rem;
+    border-color: crimson;
+    background-color: rgba(220, 20, 60, 0.356);
     padding: 1rem;
     width: 50rem;
     margin: 0.25rem 0rem;
 }
 .cardPokemon:hover{
-    background-color: blanchedalmond;
+    background-color: rgba(255, 235, 205, 0.815);
 }
 .avatar_img{
     width: 15rem;
@@ -15,11 +18,8 @@
 }
 .infoPokemon{
     display: flex;
+    text-align: center;
 }
 .infoPokemon ul{
     list-style: none;
-}
-.infoPokemon div{
-justify-content: center;
-align-content: center;
 }

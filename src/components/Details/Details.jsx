@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Details.css"
 
 function Details(info) {
   const {abilities,name,id,sprites,stats,types,moves}= info.pokemon
@@ -8,21 +9,25 @@ function Details(info) {
   const printMoves=(moves)=>{
     return moves.map((move)=>{
       let moveLearn=move.version_group_details[0]
-      return <li><h5>{move.move.name}:</h5> <p>Nivel necesario: {moveLearn.level_learned_at}</p> <p>Metodo de aprendizaje: {moveLearn.move_learn_method.name}</p></li>
+      return <li><div className='move'><h4>{move.move.name}:</h4> <div><p>Nivel necesario: {moveLearn.level_learned_at}</p> <p>Metodo de aprendizaje: {moveLearn.move_learn_method.name}</p></div></div></li>
   })}
 
   return (
-    <div>
-      <img src={img} alt="" />
-      <h3>Nombre: {name}</h3>
-      <p>Nº Pokedex: {id}</p>
-      <p>{types.length<2?<>Tipo: </>:<>Tipos: </>}</p>
+    <div id='details'>
+      <img src={img} alt="Pokemon imagen" />
+      <div id='details_general'>
+      <h2>{name}</h2>
+      <h3>Nº Pokedex: {id}</h3>
+      <h3>{types.length<2?<>Tipo: </>:<>Tipos: </>}</h3>
       <ul>{types.map((type)=><li>{type.type.name} </li>)}</ul>
-      <p>Habilidades:</p>
-      <ul>{abilities.map((ability)=><li>{ability.ability.name} </li>)}</ul>
-      <p>Estadisticas:</p>
-      <ul>{stats.map((stat)=><li>{stat.stat.name}: {stat.base_stat}</li>)}</ul>
-      {moves?<><p>Ataques disponibles:</p><ol>{printMoves(moves)}</ol></>:null}
+      <h3>Habilidades:</h3>
+      <ul>{abilities.map((ability)=><li>{ability.ability.name} </li>)}</ul></div>
+      <div id="details_stats">
+      <h3>Estadisticas:</h3>
+      <ul>{stats.map((stat)=><li><b>{stat.stat.name}:</b> {stat.base_stat}</li>)}</ul>
+      </div>
+      <div id='details_moves'>{moves?<><h3>Ataques disponibles:</h3><ol id='details_moves_ol'>{printMoves(moves)}</ol></>:null}
+    </div>
     </div>
   )
 }

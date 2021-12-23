@@ -9,6 +9,7 @@ function PokemonList() {
   const paintPokemons = () => pokemons.map((pokemon,i)=><Link to={`/pokemon/${pokemon.id}?id=${pokemon.id}`} ><Pokemon info={pokemon} key={i}/></Link>)
   return (
     <div id='pokemons'>
+      <h2>Lista de Pokemons:</h2>
       {paintPokemons()}
     </div>
   )

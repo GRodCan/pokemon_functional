@@ -1,0 +1,6 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(119, 136, 153, 0.609);
+    padding: 1rem 0rem 4rem 0rem;}
