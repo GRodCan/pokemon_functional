@@ -1,0 +1,10 @@
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    margin: 0;
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}

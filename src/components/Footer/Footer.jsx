@@ -1,9 +1,19 @@
-import React, { Component } from "react";
+import React, { useContext } from 'react'
+import { listContext } from '../../context/listContext'
+import "./Footer.css"
 
-class Footer extends Component {
-  render() {
-    return <div>Footer </div>;
-  }
+function Footer() {
+  const {pokemons} = useContext(listContext)
+  return (
+    <footer>
+    {pokemons.length>0?<><p>Lista actual:</p>
+    <ol>
+    {pokemons.map((pokemon,i)=><li key={i}>{pokemon.name}</li>)}
+    </ol></>
+    :<p>Lista vacía</p>}
+    </footer>
+  )
 }
 
-export default Footer;
+export default Footer
+

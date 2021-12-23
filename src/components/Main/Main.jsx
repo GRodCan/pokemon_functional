@@ -6,6 +6,7 @@ import Form from "../Form/Form"
 import Details from '../Details/Details';
 import useQuery from '../../hooks/useQuery';
 import usePokemonID from '../../hooks/usePokemonID';
+import "./Main.css"
 
 function Main() {
   let query= useQuery();

@@ -1,0 +1,26 @@
+header{
+    background-color: crimson;
+    padding: 1rem;
+}
+#title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1{ 
+    
+    color: gold;
+    
+    
+}
+#logo{
+    height: 6rem;
+    transform: scaleX(-1);
+    margin-left: -0.9rem;
+        
+}
+#logo2{
+    height: 6rem;
+    margin-right: -0.9rem;
+        
+}

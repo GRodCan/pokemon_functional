@@ -2,6 +2,7 @@ import React, {useState,useEffect,useContext} from 'react'
 import axios from 'axios'
 import PokemonList from '../PokemonList/PokemonList'
 import useDebounce from '../../hooks/useDebounce'
+import "./Search.css"
 
 import { listContext } from '../../context/listContext'
 
@@ -43,9 +44,9 @@ function Search() {
    
 
   return (
-    <div><br/>
-    <input type="text" name="input" id="input" onChange={handleChange} value={input}/>
-    <br/><br/>
+    <div id='search'>
+      <h2>Introduce el pokemon (o el número de este en la pokedex) para añadir a tu lista:</h2>
+    <input type="text" name="input" id="input" onChange={handleChange} value={input} placeholder='Ej. "bulbasur" o "1"'/>
     </div>
   )
 }

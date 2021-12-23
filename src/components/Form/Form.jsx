@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { listContext } from '../../context/listContext';
 import { useForm } from "react-hook-form";
-
+import "./Form.css"
 
 export default function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -12,16 +12,19 @@ export default function Form() {
     ;
 }
   
-  // const {abilities,name,id,sprites,stats,types,moves}= info.pokemon
-  // const img= sprites.other["official-artwork"].front_default
-  return (
+  return (<div>
+    <h2>Nuevo pokemon</h2>
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="name">Nombre: <input type="text" name="name" id="name" required minLength={3} {...register("name")}/></label>
-      <label htmlFor="id">Nº Pokedex: <input type="number" name="id" id="id" required min={899} placeholder='Min. 899' {...register("id")}/></label>
-      <label htmlFor="avatar_url">Url Avatar: <input type="url" name="avatar_url" id="avatar_url" required {...register("sprites.front_default")}/></label>
-      <label htmlFor="pokemon_url">Url imagen real: <input type="url" name="pokemon_url" id="pokemon_url" required {...register('sprites.other.official-artwork.front_default')}/></label>
-      <label htmlFor="type1"> 1º Tipo
-        <select name="type1" required {...register("types[0].type.name")}>
+      <label htmlFor="name">Nombre: </label>
+      <input type="text" name="name" id="name" required minLength={3} {...register("name")}/>
+      <label htmlFor="id">Nº Pokedex: </label>
+      <input type="number" name="id" id="id" required min={899} placeholder='Min. 899' {...register("id")}/>
+      <label htmlFor="avatar_url">Url Avatar: </label>
+      <input type="url" name="avatar_url" id="avatar_url" required {...register("sprites.front_default")}/>
+      <label htmlFor="pokemon_url">Url imagen real: </label>
+      <input type="url" name="pokemon_url" id="pokemon_url" required {...register('sprites.other.official-artwork.front_default')}/>
+      <div id="types"><p>Tipos:</p>
+      <label htmlFor="type1"> 1º Tipo:<select name="type1" required {...register("types[0].type.name")}>
         <option value="Acero">Acero</option> 
         <option value="Agua">Agua</option> 
         <option value="Bicho">Bicho</option>
@@ -43,8 +46,7 @@ export default function Form() {
         <option value="Programador">Programador</option>
         </select>
       </label>
-      <label htmlFor="type2"> 2º Tipo:
-      <select name="type2" {...register("types[1].type.name")}>
+      <label htmlFor="type2"> 2º Tipo:<select name="type2" {...register("types[1].type.name")}>
         <option value=""></option>  
         <option value="Acero">Acero</option> 
         <option value="Agua">Agua</option> 
@@ -67,10 +69,15 @@ export default function Form() {
         <option value="Programador">Programador</option>
       </select>
       </label>
+      </div>
+      
+      
+      <label htmlFor="ability1">Habilidad 1: </label>
+      <input type="text" name="ability1" id="ability1" minLength={3} {...register("abilities[0].ability.name")}/>
+      <label htmlFor="ability2">Habilidad 2: </label>
+      <input type="text" name="ability2" id="ability2" minLength={3} {...register("abilities[1].ability.name")}/>
 
-      <label htmlFor="ability1">Habilidad 1: <input type="text" name="ability1" id="ability1" minLength={3} {...register("abilities[0].ability.name")}/></label>
-      <label htmlFor="ability2">Habilidad 2: <input type="text" name="ability2" id="ability2" minLength={3} {...register("abilities[1].ability.name")}/></label>
-
+      <div id="stats">
       <p>Estadísticas:</p>
       <label value="hp" {...register("stats[0].stat.name")}>Hp:<input type="hidden" value="hp"/></label>
       <input type="range" name="hp" id="hp" min={0} max={100} {...register("stats[0].base_stat")}/>
@@ -89,8 +96,9 @@ export default function Form() {
 
       <label htmlFor="speed"{...register("stats[5].stat.name")}>Velocidad: <input type="hidden" value="speed"/></label>
       <input type="range" name="speed" id="speed" min={0} max={100} {...register("stats[5].base_stat")}/>
-      
-      <input type="submit"/>
+      </div>
+      <input type="submit" id="submitInput"/>
     </form>
+    </div>
   )
 }

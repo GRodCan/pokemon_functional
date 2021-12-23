@@ -7,3 +7,16 @@
     text-decoration: none;
     color: black;
 }
+#list{
+    height: 42rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    overflow-y: scroll;
+    border-top: 0.2rem solid crimson;
+    border-bottom: 0.2rem solid crimson;  
+}
+#pokedex{
+    height: 42rem;
+}
